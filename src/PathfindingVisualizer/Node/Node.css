@@ -1,0 +1,189 @@
+/* Base node style */
+.node {
+  width: 25px;
+  height: 25px;
+  outline: 1px solid rgb(175, 216, 248);
+  display: inline-block;
+}
+
+.node-start {
+  background-color: #00ff6a !important;
+  box-shadow: 0 0 12px #00ff6a, 0 0 25px #00ff6a75, inset 0 0 10px #008f4a;
+  border-radius: 4px;
+  animation: pulseStart 1.5s infinite ease-in-out;
+}
+
+@keyframes pulseStart {
+  0% {
+    box-shadow: 0 0 8px #00ff6a, 0 0 18px #00ff6a50, inset 0 0 6px #007f3a;
+    transform: scale(0.98);
+  }
+  50% {
+    box-shadow: 0 0 18px #00ff6a, 0 0 32px #00ff6a99, inset 0 0 12px #00a85a;
+    transform: scale(1.05);
+  }
+  100% {
+    box-shadow: 0 0 8px #00ff6a, 0 0 18px #00ff6a50, inset 0 0 6px #007f3a;
+    transform: scale(0.98);
+  }
+}
+.node-finish {
+  background-color: #ff2e2e !important;
+  box-shadow: 0 0 12px #ff2e2e, 0 0 25px #ff2e2e75, inset 0 0 10px #a80000;
+  border-radius: 4px;
+  animation: pulseFinish 1.5s infinite ease-in-out;
+}
+
+@keyframes pulseFinish {
+  0% {
+    box-shadow: 0 0 8px #ff2e2e, 0 0 18px #ff2e2e50, inset 0 0 6px #7f0000;
+    transform: scale(0.98);
+  }
+  50% {
+    box-shadow: 0 0 18px #ff2e2e, 0 0 32px #ff2e2e99, inset 0 0 12px #b80000;
+    transform: scale(1.05);
+  }
+  100% {
+    box-shadow: 0 0 8px #ff2e2e, 0 0 18px #ff2e2e50, inset 0 0 6px #7f0000;
+    transform: scale(0.98);
+  }
+}
+
+
+
+/* Wall node */
+.node-wall {
+  background-color: rgb(12, 53, 71);
+}
+.node:hover {
+  background-color: rgba(0, 255, 255, 0.2);
+  cursor: pointer;
+  transition: 0.1s ease-out;
+}
+
+/* ================================
+   VISITED NODE ANIMATION
+   ================================ */
+.node-visited {
+  animation-name: visitedAnimation;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes visitedAnimation {
+  0% {
+    transform: scale(0.3);
+    background-color: rgba(0, 0, 66, 0.75);
+    border-radius: 100%;
+  }
+  50% {
+    background-color: rgba(17, 104, 217, 0.75);
+  }
+  100% {
+    transform: scale(1);
+    background-color: rgba(0, 190, 218, 0.75);
+  }
+}
+
+.app-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  color: white;
+  font-family: 'Inter', sans-serif;
+
+  /* Futuristic gradient animation */
+  background: linear-gradient(135deg, #0b0f1a, #06080e, #101525);
+  background-size: 300% 300%;
+  animation: bgAnimation 12s ease infinite;
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated background gradient */
+@keyframes bgAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Neon grid overlay */
+.app-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+
+  background-size: 40px 40px;
+
+  z-index: 0;
+}
+
+.grid-container::before {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  top: -150px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(0, 200, 255, 0.25), transparent 70%);
+  filter: blur(60px);
+  z-index: 0;
+}
+
+.app-container.algorithm-active::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(0,255,180,0.08), transparent 60%);
+  animation: runPulse 2s ease-out infinite;
+  pointer-events: none;
+}
+
+@keyframes runPulse {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+
+/* ================================
+   SHORTEST PATH ANIMATION
+   ================================ */
+.node-shortest-path {
+  animation-name: shortestPath;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  background-color: yellow !important;
+}
+
+@keyframes shortestPath {
+  0% {
+    transform: scale(0.6);
+    background-color: rgb(255, 254, 106);
+  }
+  50% {
+    transform: scale(1.2);
+    background-color: rgb(255, 254, 106);
+  }
+  100% {
+    transform: scale(1);
+    background-color: rgb(255, 254, 106);
+  }
+}

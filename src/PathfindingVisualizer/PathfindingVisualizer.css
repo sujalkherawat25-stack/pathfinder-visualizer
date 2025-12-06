@@ -1,0 +1,96 @@
+/* Dark background */
+.app-container {
+  height: 100vh;
+  width: 100%;
+  background: #0f0f17;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  color: white;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Glassmorphism Control Panel */
+.control-panel {
+  width: 90%;
+  max-width: 900px;
+  padding: 20px;
+  margin-bottom: 15px;
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(10px);
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  text-align: center;
+}
+
+.title {
+  margin-bottom: 15px;
+  font-size: 24px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  color: #8ab4ff;
+}
+
+.button-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* BUTTONS */
+.btn {
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  transition: 0.25s;
+  font-weight: 500;
+}
+
+.btn.primary {
+  background: #4b82ff;
+  color: white;
+  box-shadow: 0 0 12px rgba(75, 130, 255, 0.5);
+}
+
+.btn.primary:hover {
+  background: #3b6be0;
+}
+
+.btn.active {
+  background: #1dd75b;
+  color: black;
+}
+
+.btn.danger {
+  background: #ff4b4b;
+  color: white;
+}
+
+.btn.danger:hover {
+  background: #d63b3b;
+}
+
+/* Mode Instruction Text */
+.mode-indicator {
+  margin-top: 10px;
+  color: #f4f4f4;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* Grid container */
+.grid-container {
+  width: 90%;
+  overflow-x: auto;
+  padding-bottom: 25px;
+}
+
+/* Grid spacing */
+.grid {
+  display: inline-block;
+  margin-top: 10px;
+}
