@@ -19,7 +19,7 @@ This tool helps users understand how algorithms like **Dijkstra’s** work inter
 ## 📸 Screenshots
 
 ### 🔍 Visualization
-![Visualization Screenshot](https://github.com/sujalkherawat25-stack/pathfinder-visualizer/blob/main/screenshots/visualization.png)
+![Visualization Screenshot](visualization.png)
 
 ### 🏠 Home Page
-![Homepage](https://github.com/sujalkherawat25-stack/pathfinder-visualizer/blob/main/screenshots/homepage.png)
+![Homepage](homepage.png)
