@@ -18,5 +18,5 @@ This tool helps users understand how algorithms like **Dijkstra’s** work inter
 
 ## 📸 Screenshots
 
-![visual](image.png)
+![Visualization Screenshot](image.png)
 
