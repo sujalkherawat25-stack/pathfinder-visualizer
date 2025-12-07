@@ -18,5 +18,5 @@ This tool helps users understand how algorithms like **Dijkstra’s** work inter
 
 ## 📸 Screenshots
 
-> Add screenshots after running your app
+![visual](https://github.com/sujalkherawat25-stazk/pathfinder-visualizer/blob/main/screenshots/image.png)
 
