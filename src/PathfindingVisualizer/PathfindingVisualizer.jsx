@@ -21,9 +21,9 @@ const PathfindingVisualizer = () => {
     setGrid(getInitialGrid());
   }, []);
 
-  /* -----------------------------------------------------
-      Mouse Down (now supports placing start/finish)
-  ------------------------------------------------------ */
+  
+      //Mouse Down (now supports placing start/finish)
+ 
   const handleMouseDown = (row, col) => {
     // Placing START node
     if (placingMode === "start") {
@@ -57,9 +57,9 @@ const PathfindingVisualizer = () => {
 
   const handleMouseUp = () => setMouseIsPressed(false);
 
-  /* -----------------------------------------------------
-      Animation – Visited Nodes
-  ------------------------------------------------------ */
+
+      //  Animation – Visited Nodes
+  
   const animateDijkstra = (visitedNodesInOrder, nodesInShortestPathOrder) => {
     for (let i = 0; i <= visitedNodesInOrder.length; i++) {
       if (i === visitedNodesInOrder.length) {
@@ -77,9 +77,9 @@ const PathfindingVisualizer = () => {
     }
   };
 
-  /* -----------------------------------------------------
-      Animation – Shortest Path
-  ------------------------------------------------------ */
+
+     //   Animation – Shortest Path
+
   const animateShortestPath = (nodesInShortestPathOrder) => {
     for (let i = 0; i < nodesInShortestPathOrder.length; i++) {
       setTimeout(() => {
@@ -90,9 +90,9 @@ const PathfindingVisualizer = () => {
     }
   };
 
-  /* -----------------------------------------------------
-      Run Dijkstra
-  ------------------------------------------------------ */
+
+    //     Run Dijkstra
+
  const visualizeDijkstra = () => {
 
   // 🔥 Pulse the background to show algorithm is running
@@ -114,9 +114,8 @@ const PathfindingVisualizer = () => {
 };
 
 
-  /* -----------------------------------------------------
-      UI + Grid Rendering
-  ------------------------------------------------------ */
+      //   UI + Grid Rendering
+
   return (
     <div className="pathfinder-container">
 
@@ -151,9 +150,9 @@ const PathfindingVisualizer = () => {
   );
 };
 
-/* -----------------------------------------------------
-    Grid Helpers
------------------------------------------------------- */
+
+  //     Grid Helpers
+
 const getInitialGrid = () => {
   const grid = [];
   for (let row = 0; row < 20; row++) {
@@ -177,9 +176,9 @@ const createNode = (col, row) => ({
   previousNode: null,
 });
 
-/* -----------------------------------------------------
-    NEW — Change Start Node
------------------------------------------------------- */
+
+   // NEW — Change Start Node
+
 const changeStartNode = (grid, row, col) => {
   const newGrid = grid.map(r => r.map(n => ({ ...n })));
 
@@ -192,9 +191,9 @@ const changeStartNode = (grid, row, col) => {
   return newGrid;
 };
 
-/* -----------------------------------------------------
-    NEW — Change Finish Node
------------------------------------------------------- */
+
+//    NEW — Change Finish Node
+
 const changeFinishNode = (grid, row, col) => {
   const newGrid = grid.map(r => r.map(n => ({ ...n })));
 
@@ -207,9 +206,8 @@ const changeFinishNode = (grid, row, col) => {
   return newGrid;
 };
 
-/* -----------------------------------------------------
-    Wall Toggle
------------------------------------------------------- */
+//    Wall Toggle
+
 const toggleWall = (grid, row, col) => {
   const newGrid = grid.map(r => r.slice());
   const node = newGrid[row][col];
